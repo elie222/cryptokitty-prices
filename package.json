@@ -1,0 +1,42 @@
+{
+  "name": "cryptokitty-prices",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build":
+      "rimraf dist/ && babel ./ --out-dir dist/ --ignore ./node_modules,./.babelrc,./package.json,./npm-debug.log --copy-files",
+    "start": "npm run build && node dist/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "precommit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.{js,json,css}": ["prettier --write", "git add"]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/elie222/cryptokitty-prices.git"
+  },
+  "keywords": ["cryptokitties"],
+  "author": "elie222",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/elie222/cryptokitty-prices/issues"
+  },
+  "homepage": "https://github.com/elie222/cryptokitty-prices#readme",
+  "dependencies": {
+    "axios": "^0.17.1",
+    "cheerio": "^1.0.0-rc.2",
+    "lodash": "^4.17.4",
+    "moment": "^2.19.3",
+    "web3": "^1.0.0-beta.26"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "husky": "^0.14.3",
+    "lint-staged": "^5.0.0",
+    "prettier": "1.8.2",
+    "rimraf": "^2.6.2"
+  }
+}
